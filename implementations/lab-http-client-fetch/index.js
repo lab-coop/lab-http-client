@@ -6,8 +6,8 @@ module.exports = function HTTPClientFetchImplementation() {
     sendRequest
   });
 
-  function sendRequest(url, {method, body, headers}={}) {
-    return fetch(url, {method, body, headers, redirect: 'manual'}).then(response => {
+  function sendRequest(url, {method, body, headers, redirect}={}) {
+    return fetch(url, {method, body, headers, redirect}).then(response => {
       const responseHeaders = {};
       response.headers.forEach((value, name) => responseHeaders[name] = value);
       return response.text().then(responseText => {
