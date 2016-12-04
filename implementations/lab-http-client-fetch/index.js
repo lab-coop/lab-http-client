@@ -1,5 +1,5 @@
 'use strict';
-const fetch = require('node-fetch');
+const fetch = require('isomorphic-fetch');
 
 module.exports = function HTTPClientFetchImplementation() {
   return Object.freeze({
